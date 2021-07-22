@@ -19,7 +19,9 @@ app.use(express.urlencoded({extended:true}));
 // }));
 
 // Route Handlers
-// app.use('/api', apiRouter);
+app.use('/api', (req,res)=>{
+	res.send('hello');
+});
 
 //Default Error Handler
 
