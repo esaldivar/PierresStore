@@ -2,7 +2,7 @@
   "name": "pierresstore",
   "version": "1.0.0",
   "description": "A mock e-commerce store based off of Stardew Valley",
-  "main": "index.tsx",
+  "main": "index.js",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,8 +29,13 @@
     "@babel/preset-typescript": "^7.14.5",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "eslint": "^7.31.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "style-loader": "^3.2.1",
     "typescript": "^4.3.5",
