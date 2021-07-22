@@ -4,9 +4,11 @@
   "description": "A mock e-commerce store based off of Stardew Valley",
   "main": "index.js",
   "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development concurrently \"nodemon server/server.js\" \"webpack serve --open\"",
     "format": "prettier --write \"./client/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "start": "webpack serve --config webpack/webpack.config.js --open",
     "lint": "eslint --fix \"./client/**/*.{js,jsx,ts,tsx,json}\"",
+    "start": "nodemon server/server.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +22,9 @@
   },
   "homepage": "https://github.com/esaldivar/PierresStore#readme",
   "dependencies": {
+    "concurrently": "^6.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -34,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",

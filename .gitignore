@@ -30,6 +30,5 @@ typings/
 .env.test
 
 #build / generate output
-
-build
+build/
 

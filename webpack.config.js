@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: path.resolve(__dirname, '..', './client/index.tsx'),
+	entry: path.resolve(__dirname,'./client/index.tsx'),
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 	},
@@ -34,13 +34,21 @@ module.exports = {
 		],
 	},
 	output: {
-		path: path.resolve(__dirname, '..', './build'),
+		path: path.resolve(__dirname,'./build'),
 		filename: 'bundle.js',
 	},
-	mode: 'development',
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, '..', 'index.html'),
+			template: path.resolve(__dirname,'index.html'),
 		}),
 	],
+	devServer: {
+		historyApiFallback: true,
+		publicPath: '/build',
+		proxy: {
+		  '/api': {
+			target: 'http://localhost:3000',
+		  },
+		},
+	  },
 };
