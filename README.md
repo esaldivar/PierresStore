@@ -8,7 +8,9 @@
 
 <h2 align="center">Table of Contents</h2>
 
+* [FolderStructure]()
 * [Wireframe]()
+* [Database Structure and Overview]()
 * [Test Driven Development]()
 * [License]()
 
@@ -22,7 +24,8 @@
 <img src="./docs/testdrivendev.png" width="800"/>
 <img src="./docs/Cypress_test_intheloop.gif" width="800"/>
  </p>
-
+<h2 href="#Database" >Database Structure and Overview</h2>
+<h2 href="#Test" >Test Driven Development</h2>
 <h2 href="#License" >License</h2>
 
 This product is licensed under the MIT License.
