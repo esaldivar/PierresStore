@@ -1,4 +1,4 @@
-# PierresStore
+# Pierre's Store
 
 <p align="center">
     <img src="./docs/Pierres_shop.png" width="200"/>
