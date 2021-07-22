@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"./client/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "start": "webpack serve --config webpack/webpack.config.js --open",
+    "start": "webpack serve --config webpack.config.js --open",
     "lint": "eslint --fix \"./client/**/*.{js,jsx,ts,tsx,json}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
