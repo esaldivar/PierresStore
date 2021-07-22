@@ -3,7 +3,6 @@
 <p align="center">
     <img src="./docs/Pierres_shop.png" width="200"/>
 </p>
-<h1 align ="center">Pierre's Store</h1>
 <p align="center">A mock e-commerce website based off of Stardew Valley.</p>
 
 
