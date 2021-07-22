@@ -7,6 +7,7 @@ module.exports = {
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 	},
+	devtool: 'inline-source-map',
 	module: {
 		rules: [
 			{
@@ -41,5 +42,5 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, '..', 'index.html'),
 		}),
-	]
+	],
 };
