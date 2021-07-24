@@ -1,15 +1,18 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-// const apiRouter = require('./routes/api')
-// const session = require('express-session');
-const PORT = 3000;
-
+const apiRouter = require('./routes/api');
+const mongoose = require("mongoose");
+const env = require('dotenv').config();
+const PORT = process.env.PORT;
 // const cors = require('cors')
+
+
 app.use(express.json());
 
 
-app.use(express.urlencoded({extended:true}));
+// Parses incoming requests with urlencoded payloads
+app.use(express.urlencoded({ extended: true }));
 
 //session information below
 // app.use(session({
@@ -18,10 +21,19 @@ app.use(express.urlencoded({extended:true}));
 //   saveUninitialized: false
 // }));
 
-// Route Handlers
-app.use('/api', (req,res)=>{
-	res.send('hello');
+//mongoDB
+mongoose.connect(`${process.env.URI}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  dbName: 'user'
 });
+
+mongoose.connection.once("open", () => {
+  console.log("Connected to MongoDB");
+});
+
+// Route Handlers
+app.use('/api', apiRouter);
 
 //Default Error Handler
 
