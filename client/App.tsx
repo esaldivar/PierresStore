@@ -3,6 +3,10 @@ import axios from 'axios';
 import './styles.css';
 import IMAGE from './assets/Pierres_shop.png';
 
+// export interface user {
+//   username: string
+// }
+
 export const App = () => {
   
    const [username, setUsername] = useState('');
@@ -16,7 +20,10 @@ export const App = () => {
         password: password,
       },
     })
-    .then((res) => {console.log(res.data);})
+    .then((res) => {
+      console.log(res.data);
+      localStorage.setItem('user', `${username}`)
+    })
     .catch((err) => console.log(err));
    }
     return (
