@@ -18,6 +18,10 @@ const { User } = require('../../models/testmodel');
         if (!findUserInDB) return res.status(200).json({message: 'User does not exist'});
         const validatePassword = await bcrypt.compare(password, findUserInDB.password);
         if (validatePassword) {
+            req.session.user = {
+                userId: findUserInDB._id,
+                user: findUserInDB.user,
+             }
             return next();
         } else return res.status(200).json({message: 'Incorrect email/password combination'});
     } catch (err) {

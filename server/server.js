@@ -4,6 +4,8 @@ const app = express();
 const apiRouter = require('./routes/api');
 const mongoose = require("mongoose");
 const env = require('dotenv').config();
+const session = require('express-session');
+const mongoStore = require('connect-mongodb-session')(session);
 const PORT = process.env.PORT;
 // const cors = require('cors')
 
@@ -14,12 +16,21 @@ app.use(express.json());
 // Parses incoming requests with urlencoded payloads
 app.use(express.urlencoded({ extended: true }));
 
-//session information below
-// app.use(session({
-//   secret: 'secret santa',
-//   resave: false,
-//   saveUninitialized: false
-// }));
+app.use(session({
+  key: process.env.COOKIE_KEY,
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: false,
+  store: new mongoStore({
+    uri: `${process.env.URI}`,
+    databaseName: 'user',
+    collection: 'sessions',
+    expires: 60 * 60 * 24
+  }),
+  cookie: {
+    maxAge: 900000
+  }
+}))
 
 //mongoDB
 mongoose.connect(`${process.env.URI}`, {
