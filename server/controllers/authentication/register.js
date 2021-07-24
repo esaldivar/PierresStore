@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../models/testmodel');
 
 /**
+ * @author Eric Saldivar
  * @params req.body.data receives username and password from client
  * @description middleware that creates new user in database using bycrpt to hash password
  */
