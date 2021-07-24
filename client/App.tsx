@@ -12,7 +12,7 @@ export const App = () => {
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
 
-   const onSubmit = (e:any) => {
+   const login = (e:any) => {
      e.preventDefault();
      axios.post("/api/login", {
       data: {
@@ -22,10 +22,26 @@ export const App = () => {
     })
     .then((res) => {
       console.log(res.data);
-      localStorage.setItem('user', `${username}`)
     })
     .catch((err) => console.log(err));
    }
+
+   const register = (e:any) => {
+    e.preventDefault();
+    axios.post("/api/register", {
+     data: {
+       username: username,
+       password: password,
+     },
+   })
+   .then((res) => {
+     console.log(res.data);
+     
+   })
+   .catch((err) => console.log(err));
+  }
+
+
     return (
     <>
       <h1>Pierre's Store</h1>
@@ -43,7 +59,8 @@ export const App = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         /> 
-        <button id="submitTask" className="submitTask" onClick={onSubmit}>Submit</button>
+        <button id="loginBtn" className="submitTask" onClick={login}>Login</button>
+        <button id="registerBtn" className="submitTask" onClick={register}>Register</button>
       </form>
        
     </>
