@@ -1,11 +1,13 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-// const apiRouter = require('./routes/api')
+const apiRouter = require('./routes/api')
 // const session = require('express-session');
 const PORT = 3000;
 
 // const cors = require('cors')
+
+
 app.use(express.json());
 
 
@@ -19,9 +21,7 @@ app.use(express.urlencoded({extended:true}));
 // }));
 
 // Route Handlers
-app.use('/api', (req,res)=>{
-	res.send('hello');
-});
+app.use('/api', apiRouter);
 
 //Default Error Handler
 
