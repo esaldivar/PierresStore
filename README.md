@@ -12,6 +12,7 @@
 * [Wireframe]()
 * [Database Structure and Overview]()
 * [Test Driven Development]()
+* [Dev Ops with Github Actions]()
 * [License]()
 
 <h2 href="#Wireframe" >Wireframe</h2>
