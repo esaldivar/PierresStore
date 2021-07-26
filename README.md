@@ -28,6 +28,8 @@
 <h2 href="#Database" >Database Structure and Overview</h2>
 <h2 href="#Test" >Test Driven Development</h2>
 <h2 href="#Devops" >Dev Ops with Github Actions</h2>
+<img src="./docs/testdev.png" width="800"/>
+<img src="./docs/testpr.png" width="800"/>
 <h2 href="#License" >License</h2>
 
 This product is licensed under the MIT License.
