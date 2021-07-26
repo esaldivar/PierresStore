@@ -16,6 +16,7 @@
 * [License]()
 
 <h2 href="#FS" >Folder Structure</h2>
+<img src="./docs/psfs.png" width="800"/>
 <h2 href="#Wireframe" >Wireframe</h2>
 <img src="./docs/wfv1.png" width="800"/>
 <h2 href="#Database" >Database Structure and Overview</h2>
