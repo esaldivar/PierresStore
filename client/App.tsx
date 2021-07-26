@@ -11,9 +11,14 @@ export const App = () => {
   
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
+   const [loggedIn, setLoggedIn] = useState(false);
 
    const login = (e:any) => {
      e.preventDefault();
+     if(loggedIn){
+       console.log('You are already logged in!');
+       return;
+     }
      axios.post("/api/login", {
       data: {
         username: username,
@@ -22,6 +27,9 @@ export const App = () => {
     })
     .then((res) => {
       console.log(res.data);
+      if(res.data.message === 'You successfully logged in!'){
+        setLoggedIn(true);
+      }
     })
     .catch((err) => console.log(err));
    }
