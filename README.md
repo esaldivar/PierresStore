@@ -26,6 +26,7 @@
 <img src="./docs/Cypress_test_intheloop.gif" width="800"/>
  </p>
 <h2 href="#Database" >Database Structure and Overview</h2>
+<img src="./docs/PGdesign.png" width="800"/>
 <h2 href="#Test" >Test Driven Development</h2>
 <h2 href="#Devops" >Dev Ops with Github Actions</h2>
 <img src="./docs/devtest.png" width="800"/>
