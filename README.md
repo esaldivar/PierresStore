@@ -15,16 +15,8 @@
 * [Dev Ops with Github Actions]()
 * [License]()
 
+<h2 href="#FS" >Folder Structure</h2>
 <h2 href="#Wireframe" >Wireframe</h2>
-<p align="center">
-<img src="./docs/ntheloopwireframe.png" width="800"/>
-<img src="./docs/Finalwireframe.png" width="800"/>
- </p>
- <h2 href="#Testing" >Test Driven Development</h2>
-<p align="center">
-<img src="./docs/testdrivendev.png" width="800"/>
-<img src="./docs/Cypress_test_intheloop.gif" width="800"/>
- </p>
 <h2 href="#Database" >Database Structure and Overview</h2>
 <img src="./docs/PGdesign.png" width="800"/>
 <h2 href="#Test" >Test Driven Development</h2>
