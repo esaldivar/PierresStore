@@ -26,7 +26,7 @@ app.use(session({
     uri: `${process.env.URI}`,
     databaseName: 'user',
     collection: 'sessions',
-    expires: 60 * 60 * 24
+    expires: 60 * 60
   }),
   cookie: {
     maxAge: 900000

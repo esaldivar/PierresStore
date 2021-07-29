@@ -30,6 +30,11 @@ CREATE TABLE products (
     quantity text NOT NULL
 );
 
+CREATE TABLE favorites (
+    favorite_id SERIAL PRIMARY KEY,
+    product_id integer NOT NULL REFERENCES products(product_id) ON DELETE CASCADE
+);
+
 
 
 

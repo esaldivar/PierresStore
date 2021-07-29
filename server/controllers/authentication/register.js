@@ -11,8 +11,8 @@ const db = require('../../models/storeModel');
 
 const register = async (req, res, next) => {
 	try {
-		const postQuery = await db.query('SELECT * FROM "customers"');
-		console.log(postQuery.rows[0])
+		// const postQuery = await db.query('SELECT * FROM "customers"');
+		// console.log(postQuery.rows[0])
 
 		const saltRounds = 10;
 		const {username, password} = req.body.data;

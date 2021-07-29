@@ -5,6 +5,7 @@
  */
 
  const isAlreadyLoggedIn = (req, res, next) => {
+     console.log('this is the session cookie',req.session)
     if (req.session.userid)  return res.status(200).json({message: 'User is already logged in'});
     next();
 }
