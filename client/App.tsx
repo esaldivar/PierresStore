@@ -70,6 +70,7 @@ export const App = () => {
         <button id="loginBtn" className="submitTask" onClick={login}>Login</button>
         <button id="registerBtn" className="submitTask" onClick={register}>Register</button>
       </form>
+      <img src="https://pierresstore.s3.us-east-2.amazonaws.com/Parsnip_Seeds.png"/>
        
     </>
   )
