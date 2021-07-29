@@ -1,5 +1,4 @@
 -- Table Definition ----------------------------------------------
-
 CREATE TABLE customers (
     customer_id SERIAL PRIMARY KEY,
     first_name text NOT NULL,
@@ -19,13 +18,13 @@ CREATE TABLE order_history (
     product_id integer NOT NULL REFERENCES products(product_id)
 );
 
-
 CREATE TABLE products (
     product_id SERIAL PRIMARY KEY,
     product_name text NOT NULL UNIQUE,
     image_url text NOT NULL,
     price numeric NOT NULL,
-    season text,
+    information text NOT NULL, 
+    season text[],
     category text[] NOT NULL,
     quantity text NOT NULL
 );
@@ -35,7 +34,4 @@ CREATE TABLE favorites (
     product_id integer NOT NULL REFERENCES products(product_id) ON DELETE CASCADE
 );
 
-
--- INSERT INTO products (product_name, image_url, price, season, quanity) VALUES 
--- ('parsnip seeds', 'https://pierresstore.s3.us-east-2.amazonaws.com/Parsnip_Seeds.png', 20, 'Spring', ['seeds','vegetables'], 200);
 
