@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-const { User } = require('../../models/testmodel');
+const { User } = require('../../models/userModel');
+const db = require('../../models/storeModel');
 
 /**
  * @author Eric Saldivar
@@ -10,6 +11,9 @@ const { User } = require('../../models/testmodel');
 
 const register = async (req, res, next) => {
 	try {
+		const postQuery = await db.query('SELECT * FROM "customers"');
+		console.log(postQuery.rows[0])
+
 		const saltRounds = 10;
 		const {username, password} = req.body.data;
 		const hashedPassword = await bcrypt.hash(password, saltRounds);
