@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { User } = require('../../models/testmodel');
+const { User } = require('../../models/userModel');
 
 /**
  * 
