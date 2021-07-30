@@ -12,7 +12,7 @@ const db = require('../../models/storeModel');
 const register = async (req, res, next) => {
 	try {
 		const postQuery = await db.query('SELECT * FROM "products"');
-		console.log(postQuery.rows[0])
+		console.log(postQuery.rows)
 
 		const saltRounds = 10;
 		const {username, password} = req.body.data;

@@ -7,7 +7,7 @@ import IMAGE from './assets/Pierres_shop.png';
 //   username: string
 // }
 
-export const App = () => {
+export const App:React.FC = () => {
   
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
