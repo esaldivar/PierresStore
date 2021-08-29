@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { App } from './App'
+import { App } from './containers/App'
 
 console.log(localStorage.getItem('name'));
 
