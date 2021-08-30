@@ -1,3 +1,24 @@
-* {
-  background-color: greenyellow;
+
+.storeContainer {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.storeItems {
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid black 1px;
+}
+
+.storeItems img {
+  width: 100px;
+}
+
+.storeItems p {
+  width: 50%;
 }
