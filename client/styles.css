@@ -1,4 +1,12 @@
 
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
 .storeContainer {
   margin: 0 auto;
   width: 80%;
@@ -11,18 +19,27 @@
   align-items: center;
   text-align: center;
   border: solid black 1px;
-  width: 89.25%;
-  background-color: khaki;
+  width: 100%;
+  background-color: #03A007;
+  color: white;
 }
 
 .titleSixth {
   width: 16.6%;
 }
+.titleSixth.name {
+  color: blue;
+}
+
 .titleThird {
   width: 33%;
 }
 .titleTwelve {
   width: 8.33%;
+}
+
+.inventoryContainer {
+  width: 100%;
 }
 
 .storeItems {
@@ -31,8 +48,15 @@
   align-items: center;
   text-align: center;
   border: solid black 1px;
-  width: 100%;
+  background-color: #D7EFFF;
 }
 
+.price {
+  display: flex;
+}
+
+.price img {
+  width: 25%;
+}
 
 

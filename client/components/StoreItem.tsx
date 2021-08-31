@@ -15,7 +15,7 @@ const StoreItem = ({name, imageUrl, price, information, season,quantity}:Item) =
 			<div className="titleSixth">
 				<img src={imageUrl} alt={name} />
 			</div>
-			<div className="titleSixth">
+			<div className="titleSixth name">
 				<h2>{name}</h2>
 			</div>
 			<div className="titleThird">
@@ -35,7 +35,7 @@ const StoreItem = ({name, imageUrl, price, information, season,quantity}:Item) =
 			})}
 			</div>
 			<div className="titleTwelve">
-				<p>{price} gold</p>
+				<p className="price">{price}<img src="https://pierresstore.s3.us-east-2.amazonaws.com/Gold+(1).png"></img></p>
 			</div>
 			<div className="titleTwelve">
 				<p>{quantity}</p>
