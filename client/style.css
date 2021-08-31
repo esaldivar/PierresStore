@@ -14,6 +14,8 @@ h3 {
   background-color: #03A007;
   width: 100%;
   padding: 1rem;
+  color: white;
+  margin-bottom: 3rem;
 }
 
 .navBar ul {
@@ -28,11 +30,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
 }
+
 .storeTitle {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border: solid black 1px;
   width: 100%;
   background-color: #03A007;
@@ -42,6 +47,7 @@ h3 {
 .titleSixth {
   width: 16.6%;
 }
+
 .titleSixth.name {
   color: blue;
 }
@@ -49,6 +55,7 @@ h3 {
 .titleThird {
   width: 33%;
 }
+
 .titleTwelve {
   width: 8.33%;
 }
@@ -64,6 +71,8 @@ h3 {
   text-align: center;
   border: solid black 1px;
   background-color: #D7EFFF;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .price {
@@ -75,4 +84,4 @@ h3 {
   width: 25%;
 }
 
-
+/*# sourceMappingURL=style.css.map */

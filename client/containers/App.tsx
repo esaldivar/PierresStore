@@ -1,4 +1,4 @@
-import '../styles.css';
+import '../style.sass';
 import NavBar from './Navbar';
 import Store from './Store';
 
