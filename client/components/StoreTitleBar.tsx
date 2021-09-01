@@ -1,5 +1,6 @@
 
 
+
 const StoreTitleBar = () => {
 	return (
 		<div className="storeTitle">
@@ -8,7 +9,7 @@ const StoreTitleBar = () => {
 			<h3 className="titleThird">Item Description</h3>
 			<h3 className="titleSixth">Season</h3>
 			<h3 className="titleTwelve">Price</h3>
-			<h3 className="titleTwelve">Quantity</h3>
+			<h3 className="titleTwelve">Add to Cart</h3>
 		</div>
 
 	)

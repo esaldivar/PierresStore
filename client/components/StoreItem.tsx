@@ -1,3 +1,4 @@
+import './StoreItem.sass';
 
 interface Item {
 	name: string,
@@ -37,7 +38,7 @@ const StoreItem = ({name, imageUrl, price, information, season,quantity}:Item) =
 			<div className="titleTwelve">
 				<p className="price">{price}<img src="https://pierresstore.s3.us-east-2.amazonaws.com/Gold+(1).png"></img></p>
 			</div>
-			<div className="titleTwelve">
+			<div className="titleTwelve addCart">
 				<p>{quantity}</p>
 			</div>
 		</div>

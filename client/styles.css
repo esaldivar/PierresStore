@@ -2,18 +2,20 @@
   margin: 0;
 }
 
-body {
-  background-image: url("https://pierresstore.s3.us-east-2.amazonaws.com/stardewbackground.png");
-  background-size: cover;
-  background-position: fixed center;
-}
-
 h2 {
   font-size: 1rem;
 }
 
 h3 {
   font-size: 1rem;
+}
+
+.navBar {
+  background-color: #03A007;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  margin-bottom: 3rem;
 }
 
 .navBar ul {
@@ -28,7 +30,6 @@ h3 {
   display: flex;
   flex-wrap: wrap;
 }
-
 .storeTitle {
   display: flex;
   justify-content: center;
@@ -36,16 +37,15 @@ h3 {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border: solid 2px #A84E0D;
+  border: solid black 1px;
   width: 100%;
-  background-color: #03a007;
+  background-color: #03A007;
   color: white;
 }
 
 .titleSixth {
   width: 16.6%;
 }
-
 .titleSixth.name {
   color: blue;
 }
@@ -53,7 +53,6 @@ h3 {
 .titleThird {
   width: 33%;
 }
-
 .titleTwelve {
   width: 8.33%;
 }
@@ -67,8 +66,8 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: solid 2px #A84E0D;
-  background-color: rgba(255, 255, 255, 0.75);
+  border: solid black 1px;
+  background-color: #D7EFFF;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -76,11 +75,10 @@ h3 {
 .price {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .price img {
   width: 25%;
 }
 
-/*# sourceMappingURL=style.css.map */
+

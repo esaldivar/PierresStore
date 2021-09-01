@@ -9,7 +9,7 @@ const NavBar = () => {
 				<li>In Season</li>
 				<li>Search Bar</li>
 				<li>User Icon</li>
-				<li>Shopping Cart</li>
+				<li><a href="https://sass-lang.com/guide"><img className="shoppingCartIcon"src="https://pierresstore.s3.us-east-2.amazonaws.com/Traveling_Cart.png"/></a></li>
 			</ul>
 		</div>
 	)

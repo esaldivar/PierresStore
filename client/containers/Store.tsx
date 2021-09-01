@@ -10,7 +10,11 @@ const Store = () => {
 	useEffect(() => {
 		axios.get('/api/inventory')
 		.then((res)=>{
-			getStore(res.data);
+			getStore(res.data.sort((a:any,b:any) => {
+				const nameA = a.product_name.toUpperCase();
+				const nameB = b.product_name.toUpperCase();
+				return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+			}));
 		}).catch((err)=> {
 			console.log(err);
 		});
@@ -19,7 +23,7 @@ const Store = () => {
 
 	return (
 		<div className="storeContainer">
-			<StoreTitleBar />
+			<StoreTitleBar/>
 			<div className="inventoryContainer">
 			{store?.map((el:any, index:number) => {
 				return (
