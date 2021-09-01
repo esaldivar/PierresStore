@@ -4,8 +4,10 @@
 
 body {
   background-image: url("https://pierresstore.s3.us-east-2.amazonaws.com/stardewbackground.png");
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: fixed center;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h2 {
