@@ -4,7 +4,7 @@
     <img src="./docs/Pierres_shop.png" width="200"/>
 </p>
 <p align="center">A mock e-commerce website based off of Stardew Valley.</p>
-<img src="./docs/demo.png" width="800"/>
+<img src="./docs/Screen Shot 2021-08-31 at 9.47.21 PM.png" width="800"/>
 
 <h2 align="center">Table of Contents</h2>
 
