@@ -1,4 +1,4 @@
-import './StoreItem.sass';
+import './StoreItem.scss';
 
 interface Item {
 	name: string,
