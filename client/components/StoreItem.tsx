@@ -1,4 +1,3 @@
-import './StoreItem.scss';
 
 interface Item {
 	name: string,

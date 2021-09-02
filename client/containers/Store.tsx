@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import StoreTitleBar from "../components/StoreTitleBar";
 import StoreItem from "../components/StoreItem";
+import './StoreItem.scss';
 import axios from "axios";
 
 

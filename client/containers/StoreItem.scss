@@ -1,0 +1,58 @@
+
+.storeContainer {
+	margin: 0 auto;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	.storeTitle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		border: solid 2px #A84E0D;
+		width: 100%;
+		background-color: rgb(3, 160, 7);
+		color: white;
+	  }
+	.inventoryContainer {
+		width: 100%;
+		.storeItems {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			border: solid 2px #A84E0D;
+			background-color: rgb(255, 255, 255, 0.75);
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			.price {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				img {
+					width: 25%;
+				  }
+			  }  
+		  }	  
+	  }
+	.titleSixth {
+		width: 16.6%;
+	}
+	.titleSixth.name {
+		color: blue;
+	
+	}
+	.titleThird {
+		width: 33%;
+	}
+	.titleTwelve {
+		width: 8.33%;
+	}
+  }
+	
+  
+  
+  
+  
