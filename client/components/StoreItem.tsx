@@ -25,7 +25,7 @@ const StoreItem = ({name, imageUrl, price, information, season,quantity}:Item) =
 			{season.map((el, index) => {
 				if(!el){
 					return (
-						<p>Any</p>
+						<p key={index}>Any</p>
 					)
 				} else {
 					return (

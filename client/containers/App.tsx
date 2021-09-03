@@ -4,31 +4,31 @@ import axios from 'axios';
 import NavBar from './Navbar';
 import Store from './Store';
 
-export const StoreContext = React.createContext(null);
+export const StoreContext = React.createContext<any>(null);
 
 export const App:React.FC = () => {
   
-  // const [store, getStore] = useState<any>([]);
+  const [store, getStore] = useState<any>([]);
 
-	// useEffect(() => {
-	// 	axios.get('/api/inventory')
-	// 	.then((res)=>{
-	// 		getStore(res.data.sort((a:any,b:any) => {
-	// 			const nameA = a.product_name.toUpperCase();
-	// 			const nameB = b.product_name.toUpperCase();
-	// 			return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
-	// 		}));
-	// 	}).catch((err)=> {
-	// 		console.log(err);
-	// 	});
-	// }, [])
+	useEffect(() => {
+		axios.get('/api/inventory')
+		.then((res)=>{
+			getStore(res.data.sort((a:any,b:any) => {
+				const nameA = a.product_name.toUpperCase();
+				const nameB = b.product_name.toUpperCase();
+				return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+			}));
+		}).catch((err)=> {
+			console.log(err);
+		});
+	}, [])
 
     return (
     <div>
-      
+      <StoreContext.Provider  value={{store,getStore}}>
         <NavBar />
         <Store />
-
+      </StoreContext.Provider>
     </div>
   )
 }
