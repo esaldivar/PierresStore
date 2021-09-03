@@ -8,7 +8,6 @@ const StoreTitleBar = () => {
 
 	const {store, getStore} = useContext<any>(StoreContext)
 
-
 	const alpha = () => {
 		getStore([...store].sort((a:any,b:any) => {
 			const nameA = a.product_name.toUpperCase();
@@ -50,10 +49,10 @@ const StoreTitleBar = () => {
 				<h3>Product Name</h3>
 				<div>
 					<div>
-						<button onClick={alpha}><FontAwesomeIcon className="searchIcon" icon={faCaretUp}/></button>
+						<button onClick={alpha}><FontAwesomeIcon className="searchIcon" icon={faCaretUp} size="2x" /></button>
 					</div>
 					<div>
-						<button onClick={reverseAlpha}><FontAwesomeIcon className="searchIcon" icon={faCaretDown}/></button>
+						<button onClick={reverseAlpha}><FontAwesomeIcon className="searchIcon" icon={faCaretDown} size="2x"/></button>
 					</div>
 				</div>
 			</div>
@@ -62,23 +61,15 @@ const StoreTitleBar = () => {
 			</div>
 			<div  className="titleSixth titleName">
 				<h3>Season</h3>
-				<div>
-					<div>
-						<FontAwesomeIcon className="searchIcon" icon={faCaretUp} />
-					</div>
-					<div>
-						<FontAwesomeIcon className="searchIcon" icon={faCaretDown} />
-					</div>
-				</div>
 			</div>
 			<div className="titleTwelve titlePrice">
 				<h3>Price</h3>
 				<div>
 					<div>
-					<button onClick={lowPrice}><FontAwesomeIcon className="searchIcon" icon={faCaretUp}/></button>
+					<button onClick={lowPrice}><FontAwesomeIcon className="searchIcon" icon={faCaretUp} size="2x"/></button>
 					</div>
 					<div>
-					<button onClick={highPrice}><FontAwesomeIcon className="searchIcon" icon={faCaretDown}/></button>
+					<button onClick={highPrice}><FontAwesomeIcon className="searchIcon" icon={faCaretDown} size="2x"/></button>
 					</div>
 				</div>
 			</div>
