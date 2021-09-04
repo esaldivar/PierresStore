@@ -1,10 +1,11 @@
 import '../style.scss';
-import React,{createContext, useState, useEffect} from 'react';
+import {createContext, useState, useEffect} from 'react';
 import axios from 'axios';
 import NavBar from './Navbar';
 import Store from './Store';
+import Session from './Session';
 
-export const StoreContext = React.createContext<any>(null);
+export const StoreContext = createContext<any>(null);
 
 export const App:React.FC = () => {
   
@@ -29,6 +30,7 @@ export const App:React.FC = () => {
         <NavBar />
         <Store />
       </StoreContext.Provider>
+	  <Session />
     </div>
   )
 }
