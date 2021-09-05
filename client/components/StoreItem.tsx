@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHeartBroken} from '@fortawesome/free-solid-svg-icons'
+import {faHeart} from '@fortawesome/free-solid-svg-icons'
 import {faHeart as farHeart} from '@fortawesome/free-regular-svg-icons'
 import { useState } from 'react';
 
@@ -20,6 +20,10 @@ const StoreItem = ({name, imageUrl, price, information, season}:Item) => {
 		setFavorite(true);
 	}
 
+	const deselectFavorite = () => {
+		setFavorite(false);
+	}
+
 	function numberWithCommas(x:number) {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
@@ -30,7 +34,7 @@ const StoreItem = ({name, imageUrl, price, information, season}:Item) => {
 		<div className="storeItems">
 			<div className="titleSixth favAndImage">
 				<div>
-					{favorite && <button><FontAwesomeIcon className="favoriteSelected" icon={faHeartBroken} size="2x"/></button>}
+					{favorite && <button><FontAwesomeIcon  onClick={deselectFavorite} className="favoriteSelected" icon={faHeart} size="2x"/></button>}
 					{!favorite && <button onClick={selectFavorite}><FontAwesomeIcon className="favorite" icon={farHeart} size="2x"/></button>}
 				</div>
 				<img src={imageUrl} alt={name} />
