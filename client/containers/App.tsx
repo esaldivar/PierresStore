@@ -30,7 +30,6 @@ export const App:React.FC = () => {
         <NavBar />
         <Store />
       </StoreContext.Provider>
-	  <Session />
     </div>
   )
 }

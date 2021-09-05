@@ -15,7 +15,7 @@ const Store = () => {
 			<div className="inventoryContainer">
 			{store.map((el:any, index:number) => {
 				return (
-					<StoreItem key={index} name={el.product_name} imageUrl={el.image_url} season={el.season} price={el.price} information={el.information} quantity={el.quantity}/>
+					<StoreItem key={index} name={el.product_name} imageUrl={el.image_url} season={el.season} price={el.price} information={el.information} />
 				)
 			})}
 			</div>

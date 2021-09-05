@@ -43,7 +43,6 @@ const StoreTitleBar = () => {
 	return (
 		<div className="storeTitle">
 			<div className="titleSixth">
-				<h3>Image</h3>
 			</div>
 			<div className="titleSixth titleName">
 				<h3>Product Name</h3>
@@ -74,7 +73,7 @@ const StoreTitleBar = () => {
 				</div>
 			</div>
 			<div className="titleTwelve">
-				<h3>Add to Cart</h3>
+				
 			</div>
 		</div>
 

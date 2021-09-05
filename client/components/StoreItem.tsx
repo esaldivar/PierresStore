@@ -1,18 +1,38 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faHeartBroken} from '@fortawesome/free-solid-svg-icons'
+import {faHeart as farHeart} from '@fortawesome/free-regular-svg-icons'
+import { useState } from 'react';
+
 
 interface Item {
 	name: string,
 	imageUrl: string,
-	price: string,
+	price: number,
 	information: string,
-	season: string[],
-	quantity: string
+	season: string[]
 }
 
-const StoreItem = ({name, imageUrl, price, information, season,quantity}:Item) => {
+const StoreItem = ({name, imageUrl, price, information, season}:Item) => {
+
+	const [favorite, setFavorite] = useState<boolean>(false);
+
+	const selectFavorite = () => {
+		setFavorite(true);
+	}
+
+	function numberWithCommas(x:number) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+
+	const actualPrice = numberWithCommas(price)
 	
 	return (
 		<div className="storeItems">
-			<div className="titleSixth">
+			<div className="titleSixth favAndImage">
+				<div>
+					{favorite && <button><FontAwesomeIcon className="favoriteSelected" icon={faHeartBroken} size="2x"/></button>}
+					{!favorite && <button onClick={selectFavorite}><FontAwesomeIcon className="favorite" icon={farHeart} size="2x"/></button>}
+				</div>
 				<img src={imageUrl} alt={name} />
 			</div>
 			<div className="titleSixth name">
@@ -35,10 +55,10 @@ const StoreItem = ({name, imageUrl, price, information, season,quantity}:Item) =
 			})}
 			</div>
 			<div className="titleTwelve">
-				<p className="price">{price}<img src="https://pierresstore.s3.us-east-2.amazonaws.com/Gold+(1).png"></img></p>
+				<p className="price">{actualPrice}<img src="https://pierresstore.s3.us-east-2.amazonaws.com/Gold+(1).png"></img></p>
 			</div>
 			<div className="titleTwelve addCart">
-				<p>{quantity}</p>
+				<button className="addButton">Add To Cart</button>
 			</div>
 		</div>
 	)

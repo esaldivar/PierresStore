@@ -13,8 +13,8 @@ export const seasons = [
 	},
 	{
 		season: 'fall',
-		treeImgUrl: '',
-		decorativeImgUrl: 'https://pierresstore.s3.us-east-2.amazonaws.com/falltree.png',
+		treeImgUrl: 'https://pierresstore.s3.us-east-2.amazonaws.com/falltree.png',
+		decorativeImgUrl: '',
 		festivals: ''
 	},
 	{
