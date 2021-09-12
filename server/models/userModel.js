@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema(
 		required: true,
 		minLength: 4,
 	  },
+    favorites: {
+      type: [String],
+      required: false
+    }
   }
 );
 
