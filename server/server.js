@@ -23,7 +23,7 @@ app.use(session({
   resave: true,
   saveUninitialized: false,
   store: new mongoStore({
-    uri: `${process.env.URI}`,
+    uri: process.env.URI,
     databaseName: 'user',
     collection: 'sessions',
     expires: 60 * 60
@@ -34,7 +34,7 @@ app.use(session({
 }))
 
 //mongoDB
-mongoose.connect(`${process.env.URI}`, {
+mongoose.connect(process.env.URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   dbName: 'user'
