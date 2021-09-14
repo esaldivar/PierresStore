@@ -18,8 +18,8 @@ router.get('/inventory', retrieveInventory, (req, res) => {
 	return res.status(200).send(res.inventory);
 })
 
-router.get('/season', seasonInfo, (req, res) => {
-	return res.status(200).send(res.season);
-})
+// router.get('/season', seasonInfo, (req, res) => {
+// 	return res.status(200).send(res.season);
+// })
 
 module.exports = router;
