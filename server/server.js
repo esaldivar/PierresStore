@@ -60,12 +60,21 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-// statically serve everything in the build folder on the route '/build'
-app.use('/build', express.static(path.join(__dirname, '../build')));
-// serve index.html on the route '/'
-app.get('/', (req, res) => {
-  return res.sendFile(path.join(__dirname, '../index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('../build'));
+  app.get('*', (request, response) => {
+    response.sendFile(path.join(__dirname, '../build', 'index.html'));
+  });
+} else {
+  // statically serve everything in the build folder on the route '/build'
+  app.use('/build', express.static(path.join(__dirname, '../build')));
+  // serve index.html on the route '/'
+  app.get('/', (req, res) => {
+    return res.sendFile(path.join(__dirname, '../index.html'));
+  });
+}
+
+
 
 // Catch-all to unknown routes (404)
 app.use((req,res) => res.status(404).send('not found'))
