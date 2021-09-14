@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
 // Catch-all to unknown routes (404)
 app.use((req,res) => res.status(404).send('not found'))
 //Start Server
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
 
