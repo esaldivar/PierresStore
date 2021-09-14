@@ -11,19 +11,13 @@ const cors = require('cors')
 
 
 
-app.use(express.json());
-app.use(cors());
-
-// Parses incoming requests with urlencoded payloads
-app.use(express.urlencoded({ extended: true }));
-
 app.use(session({
   key: process.env.COOKIE_KEY,
   secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: false,
   store: new mongoStore({
-    uri: process.env.MONGODB_URI,
+    uri: `${process.env.MONGODB_URI}`,
     databaseName: 'user',
     collection: 'sessions',
     expires: 60 * 60
@@ -43,6 +37,12 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/user', {
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
 });
+
+app.use(express.json());
+app.use(cors());
+
+// Parses incoming requests with urlencoded payloads
+app.use(express.urlencoded({ extended: true }));
 
 // Route Handlers
 app.use('/api', apiRouter);
