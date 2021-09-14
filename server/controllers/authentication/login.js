@@ -1,5 +1,5 @@
-// const bcrypt = require('bcrypt');
-// const { User } = require('../../models/userModel');
+const bcrypt = require('bcrypt');
+const { User } = require('../../models/userModel');
 
 /**
  * 
@@ -11,22 +11,22 @@
  * @returns message saying that user was signed in and req.session.user
  */
 
-//  const login =  async (req, res, next) => {
-//     try {
-//         const { username, password } = req.body.data;
-//         const findUserInDB = await User.findOne({user: username});
-//         if (!findUserInDB) return res.status(200).json({message: 'User does not exist'});
-//         const validatePassword = await bcrypt.compare(password, findUserInDB.password);
-//         if (validatePassword) {
-//             req.session.user = {
-//                 userId: findUserInDB._id,
-//                 user: findUserInDB.user,
-//              }
-//             return next();
-//         } else return res.status(200).json({message: 'Incorrect email/password combination'});
-//     } catch (err) {
-//         return res.status(500).json({message: 'unknown error'})
-//     }
-// }
+ const login =  async (req, res, next) => {
+    try {
+        const { username, password } = req.body.data;
+        const findUserInDB = await User.findOne({user: username});
+        if (!findUserInDB) return res.status(200).json({message: 'User does not exist'});
+        const validatePassword = await bcrypt.compare(password, findUserInDB.password);
+        if (validatePassword) {
+            req.session.user = {
+                userId: findUserInDB._id,
+                user: findUserInDB.user,
+             }
+            return next();
+        } else return res.status(200).json({message: 'Incorrect email/password combination'});
+    } catch (err) {
+        return res.status(500).json({message: 'unknown error'})
+    }
+}
 
-// module.exports = login;
+module.exports = login;
