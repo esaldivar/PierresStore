@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
 app.use((req,res) => res.status(404).send('not found'))
 //Start Server
 app.listen(process.env.PORT, () => {
-  console.log(`Server listening on port: 3000);
+  console.log(`Server listening on port: 3000`);
 });
 
 module.exports = app;
