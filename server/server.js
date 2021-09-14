@@ -7,12 +7,12 @@ const env = require('dotenv').config();
 // const session = require('express-session');
 // const mongoStore = require('connect-mongodb-session')(session);
 const PORT = process.env.PORT || 3000;
-// const cors = require('cors')
+const cors = require('cors')
 
 
 
 app.use(express.json());
-
+app.use(cors());
 
 // Parses incoming requests with urlencoded payloads
 app.use(express.urlencoded({ extended: true }));
