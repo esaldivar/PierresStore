@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const env = require('dotenv').config();
 const session = require('express-session');
 const mongoStore = require('connect-mongodb-session')(session);
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 // const cors = require('cors')
 
 
@@ -70,7 +70,7 @@ app.get('/', (req, res) => {
 // Catch-all to unknown routes (404)
 app.use((req,res) => res.status(404).send('not found'))
 //Start Server
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
 
