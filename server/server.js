@@ -7,8 +7,11 @@ const env = require('dotenv').config();
 const session = require('express-session');
 const mongoStore = require('connect-mongodb-session')(session);
 const PORT = process.env.PORT || 3000;
-const cors = require('cors')
 
+app.use(express.json());
+
+// Parses incoming requests with urlencoded payloads
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use(session({
@@ -38,11 +41,6 @@ mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
-app.use(express.json());
-app.use(cors());
-
-// Parses incoming requests with urlencoded payloads
-app.use(express.urlencoded({ extended: true }));
 
 // Route Handlers
 app.use('/api', apiRouter);
@@ -60,27 +58,18 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('../build'));
-  app.get('*', (request, response) => {
-    response.sendFile(path.join(__dirname, '../build', 'index.html'));
-  });
-} else {
-  // statically serve everything in the build folder on the route '/build'
-  app.use('/build', express.static(path.join(__dirname, '../build')));
-  // serve index.html on the route '/'
-  app.get('/', (req, res) => {
-    return res.sendFile(path.join(__dirname, '../index.html'));
-  });
-}
-
-
+// statically serve everything in the build folder on the route '/build'
+app.use('/build', express.static(path.join(__dirname, '../build')));
+// serve index.html on the route '/'
+app.get('/', (req, res) => {
+  return res.sendFile(path.join(__dirname, '../index.html'));
+});
 
 // Catch-all to unknown routes (404)
 app.use((req,res) => res.status(404).send('not found'))
 //Start Server
 app.listen(process.env.PORT, () => {
-  console.log(`Server listening on port: 3000`);
+  console.log(`Server listening on port: ${PORT}`);
 });
 
 module.exports = app;
